@@ -52,7 +52,7 @@ eval = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/shahin3342/temptts"
+Homepage = ""
 
 [project.scripts]
 "f5-tts_infer-cli" = "f5_tts.infer.infer_cli:main"
