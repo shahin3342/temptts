@@ -4,7 +4,7 @@ USER root
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-LABEL github_repo="https://github.com/shahin3342/temptts"
+LABEL github_repo=""
 
 RUN set -x \
     && apt-get update \
