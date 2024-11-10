@@ -23,8 +23,8 @@
 |F5-TTS Base|[ckpt & vocab]()|[Emilia 95K zh&en]()|cc-by-nc-4.0|
 
 ```bash
-MODEL_CKPT: hf://SWivid/F5-TTS/F5TTS_Base/model_1200000.safetensors
-VOCAB_FILE: hf://SWivid/F5-TTS/F5TTS_Base/vocab.txt
+MODEL_CKPT:
+VOCAB_FILE: 
 ```
 *Other infos, e.g. Link to some sampled results, Github repo, Usage instruction, Tutorial (Blog, Video, etc.) ...*
 
