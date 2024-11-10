@@ -39,7 +39,7 @@ from f5_tts.infer.utils_infer import (
 )
 
 
-DEFAULT_TTS_MODEL = "F5-TTS"
+DEFAULT_TTS_MODEL = "F5-TTS-SHAHIN"
 tts_model_choice = DEFAULT_TTS_MODEL
 
 
@@ -48,12 +48,12 @@ tts_model_choice = DEFAULT_TTS_MODEL
 vocoder = load_vocoder()
 
 
-def load_f5tts(ckpt_path=str(cached_path("hf://SWivid/F5-TTS/F5TTS_Base/model_1200000.safetensors"))):
+def load_f5tts(ckpt_path=str(cached_path("hf://shahin334/F5-TTS-SHAHIN/F5TTS_Base/model_1200000.safetensors"))):
     F5TTS_model_cfg = dict(dim=1024, depth=22, heads=16, ff_mult=2, text_dim=512, conv_layers=4)
     return load_model(DiT, F5TTS_model_cfg, ckpt_path)
 
 
-def load_e2tts(ckpt_path=str(cached_path("hf://SWivid/E2-TTS/E2TTS_Base/model_1200000.safetensors"))):
+def load_e2tts(ckpt_path=str(cached_path("hf://shahin334/E2-TTS-SHAHIN/E2TTS_Base/model_1200000.safetensors"))):
     E2TTS_model_cfg = dict(dim=1024, depth=24, heads=16, ff_mult=4)
     return load_model(UNetT, E2TTS_model_cfg, ckpt_path)
 
@@ -105,9 +105,9 @@ def infer(
 ):
     ref_audio, ref_text = preprocess_ref_audio_text(ref_audio_orig, ref_text, show_info=show_info)
 
-    if model == "F5-TTS":
+    if model == "F5-TTS-SHAHIN":
         ema_model = F5TTS_ema_model
-    elif model == "E2-TTS":
+    elif model == "E2-TTS-SHAHIN":
         global E2TTS_ema_model
         if E2TTS_ema_model is None:
             show_info("Loading E2-TTS model...")
@@ -759,12 +759,12 @@ If you're having issues, try converting your reference audio to WAV or MP3, clip
             )
         with gr.Column(visible=False) as choose_custom_tts_model:
             custom_ckpt_path = gr.Textbox(
-                placeholder="MODEL_CKPT:  local_path  |  hf://SWivid/F5-TTS/F5TTS_Base/model_1200000.safetensors",
+                placeholder="MODEL_CKPT:  local_path  |  hf://shahin334/F5-TTS-SHAHIN/F5TTS_Base/model_1200000.safetensors",
                 show_label=False,
                 min_width=200,
             )
             custom_vocab_path = gr.Textbox(
-                placeholder="VOCAB_FILE:  local_path  |  hf://SWivid/F5-TTS/F5TTS_Base/vocab.txt  |  leave blank to use default",
+                placeholder="VOCAB_FILE:  local_path  |  hf://shahin334/F5-TTS-SHAHIN/F5TTS_Base/vocab.txt  |  leave blank to use default",
                 show_label=False,
                 min_width=200,
             )
