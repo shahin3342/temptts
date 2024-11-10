@@ -1,6 +1,6 @@
 # Inference
 
-The pretrained model checkpoints can be reached at [🤗 Hugging Face]() and [🤖 Model Scope](https://www.modelscope.cn/models/SWivid/F5-TTS_Emilia-ZH-EN), or will be automatically downloaded when running inference scripts.
+The pretrained model checkpoints can be reached at [🤗 Hugging Face]() and [🤖 Model Scope](), or will be automatically downloaded when running inference scripts.
 
 **More checkpoints with whole community efforts can be found in [SHARED.md](SHARED.md), supporting more languages.**
 
