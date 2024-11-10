@@ -56,14 +56,14 @@ class F5TTS:
         if model_type == "F5-TTS":
             if not ckpt_file:
                 if mel_spec_type == "vocos":
-                    ckpt_file = str(cached_path("hf://SWivrid/F5-TTS-FAHIN/F5TTS_Base/model_1200000.safetensors"))
+                    ckpt_file = str(cached_path(""))
                 elif mel_spec_type == "bigvgan":
-                    ckpt_file = str(cached_path("hf://SWivrid/F5-TTS-FAHIM/F5TTS_Base_bigvgan/model_1250000.pt"))
+                    ckpt_file = str(cached_path(""))
             model_cfg = dict(dim=1024, depth=22, heads=16, ff_mult=2, text_dim=512, conv_layers=4)
             model_cls = DiT
         elif model_type == "E2-TTS":
             if not ckpt_file:
-                ckpt_file = str(cached_path("hf://SWivrid/E2-TTS-FAHIN/E2TTS_Base/model_1200000.safetensors"))
+                ckpt_file = str(cached_path(""))
             model_cfg = dict(dim=1024, depth=24, heads=16, ff_mult=4)
             model_cls = UNetT
         else:
