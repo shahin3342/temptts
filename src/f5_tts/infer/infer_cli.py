@@ -33,7 +33,7 @@ parser.add_argument(
 parser.add_argument(
     "-m",
     "--model",
-    help="F5-TTS | E2-TTS",
+    help="F5-TTS-SHAHIN | E2-TTS-SHAHIN",
 )
 parser.add_argument(
     "-p",
@@ -121,36 +121,36 @@ vocoder = load_vocoder(vocoder_name=mel_spec_type, is_local=args.load_vocoder_fr
 
 
 # load models
-if model == "F5-TTS":
+if model == "F5-TTS-SHAHIN":
     model_cls = DiT
     model_cfg = dict(dim=1024, depth=22, heads=16, ff_mult=2, text_dim=512, conv_layers=4)
     if ckpt_file == "":
         if args.vocoder_name == "vocos":
-            repo_name = "F5-TTS"
+            repo_name = "F5-TTS-SHAHIN"
             exp_name = "F5TTS_Base"
             ckpt_step = 1200000
-            ckpt_file = str(cached_path(f"hf://SWivid/{repo_name}/{exp_name}/model_{ckpt_step}.safetensors"))
+            ckpt_file = str(cached_path(f"hf://shahin334/{repo_name}/{exp_name}/model_{ckpt_step}.safetensors"))
             # ckpt_file = f"ckpts/{exp_name}/model_{ckpt_step}.pt"  # .pt | .safetensors; local path
         elif args.vocoder_name == "bigvgan":
-            repo_name = "F5-TTS"
+            repo_name = "F5-TTS-SHAHIN"
             exp_name = "F5TTS_Base_bigvgan"
             ckpt_step = 1250000
-            ckpt_file = str(cached_path(f"hf://SWivid/{repo_name}/{exp_name}/model_{ckpt_step}.pt"))
+            ckpt_file = str(cached_path(f"hf://shahin334/{repo_name}/{exp_name}/model_{ckpt_step}.pt"))
 
-elif model == "E2-TTS":
+elif model == "E2-TTS-SHAHIN":
     model_cls = UNetT
     model_cfg = dict(dim=1024, depth=24, heads=16, ff_mult=4)
     if ckpt_file == "":
-        repo_name = "E2-TTS"
+        repo_name = "E2-TTS-SHAHIN"
         exp_name = "E2TTS_Base"
         ckpt_step = 1200000
-        ckpt_file = str(cached_path(f"hf://SWivid/{repo_name}/{exp_name}/model_{ckpt_step}.safetensors"))
+        ckpt_file = str(cached_path(f"hf://shahin334/{repo_name}/{exp_name}/model_{ckpt_step}.safetensors"))
         # ckpt_file = f"ckpts/{exp_name}/model_{ckpt_step}.pt"  # .pt | .safetensors; local path
     elif args.vocoder_name == "bigvgan":  # TODO: need to test
-        repo_name = "F5-TTS"
+        repo_name = "F5-TTS-SHAHIN"
         exp_name = "F5TTS_Base_bigvgan"
         ckpt_step = 1250000
-        ckpt_file = str(cached_path(f"hf://SWivid/{repo_name}/{exp_name}/model_{ckpt_step}.pt"))
+        ckpt_file = str(cached_path(f"hf://shahin334/{repo_name}/{exp_name}/model_{ckpt_step}.pt"))
 
 
 print(f"Using {model}...")
