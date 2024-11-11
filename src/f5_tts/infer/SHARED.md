@@ -20,7 +20,7 @@
 #### F5-TTS Base @ pretrain @ zh & en
 |Model|🤗Hugging Face|Data (Hours)|Model License|
 |:---:|:------------:|:-----------:|:-------------:|
-|F5-TTS Base|[ckpt & vocab](https://huggingface.co/shahin334/F5-TTS-SHAHIN/resolve/main/F5TTS_Base)|[Emilia 95K zh&en](https://huggingface.co/datasets/amphion/Emilia-Dataset/tree/fc71e07)|cc-by-nc-4.0|
+|F5-TTS Base|[ckpt & vocab](https://huggingface.co/shahin334/F5-TTS-SHAHIN/tree/main/F5TTS_Base)|[Emilia 95K zh&en](https://huggingface.co/datasets/amphion/Emilia-Dataset/tree/fc71e07)|cc-by-nc-4.0|
 
 ```bash
 MODEL_CKPT: hf://shahin334/F5-TTS-SHAHIN/F5TTS_Base/model_1200000.safetensors
